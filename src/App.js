@@ -1,32 +1,25 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import Greet from './components/Greet.js';
-import Welcome from './components/Welcome.js';
-import Hello from './components/Hello.js';
-import Message from './components/Message.js';
-import Counter from './components/Counter.js';
-import FunctionClick from './components/FunctionClick';
-import ClassClick from './components/ClassClick';
+import ReactDOM from 'react-dom';
+import { Router, Switch, Route, Link } from 'react-router-dom'
+import Login from './components/Login/login'
+import Dashboard from './components/Dashboard/dashboard';
+import history from './components/history'
 
 
 function App() {
   return (
-    <div className="App">
+    <div className="app">
 
-      <ClassClick/>
-      {/* <FunctionClick/> */}
+      <Router history = { history}>
+        <Switch>
 
-      {/* <Counter/> */}
-      {/* <Message/> */}
-      {/* <Greet name="Bruce" heroName="Batman">
-        <h1>This is a children of Greet</h1>
-      </Greet>
-      <Greet name= "Clark" heroName="Superman"/>
-      <Greet name="Diana" heroName="Wonder woman"/>
+          <Route path="/login" component= {Login}/>
+          <Route path="/dashboard" component = { Dashboard }/>
+          <Route path="/">THIS IS ROOT</Route>
 
-      <Welcome name="Clark" heroName="Superman"/>
-      <Hello/> */}
+        </Switch>
+      </Router>
+
     </div>
   );
 }

@@ -8,7 +8,8 @@ class Login extends Component {
         super(props)
 
         this.state = {
-            credenciales : { usuario : '', contrasena : ''}
+            credenciales : { usuario : '', contrasena : ''},
+            isLoggedIn : false
         }
     }
 
@@ -52,6 +53,8 @@ class Login extends Component {
                 <input type="password" name="contrasena" value = {this.state.credenciales.contrasena} onChange = {this.inputChanged} />
                 <br/>
                 <button type="button" onClick= {this.login}>Iniciar Sesión</button>
+                <br/>
+                
             </div>
         )
     }
